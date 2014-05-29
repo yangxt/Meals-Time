@@ -30,7 +30,7 @@
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     NSInteger launchCount = [def integerForKey:@"launchCount"];
     launchCount++;
-    if (launchCount == 3) {
+    if (launchCount == 10) {
         launchCount = 0;
         UIAlertView *rateAlert = [[UIAlertView alloc]initWithTitle:@"Please rate Meals Time on App Store!"
                                                            message:@"It helps us to make more cool updates."

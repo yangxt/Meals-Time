@@ -54,11 +54,11 @@
         afternoonSnack.text = @"Eat schedule";
         dinner.text = @"Eat schedule";
     }else{
-    breakfast.text = [NSString stringWithFormat:@"protein %.1f fat %.1f carbs %.1f", proteinValue/5+5.2, fatValue/4-1.7, carbsValue/4+6.3];
-    morningSnack.text = [NSString stringWithFormat:@"protein %.1f fat %.1f carbs %.1f", proteinValue/5, fatValue/4+1.7, carbsValue/4-6.3];
-    lunch.text = [NSString stringWithFormat:@"protein %.1f fat %.1f carbs %.1f", proteinValue/5-5.2, fatValue/4-1.8, carbsValue/4-6.5];
-    afternoonSnack.text = [NSString stringWithFormat:@"protein %.1f fat %.1f carbs %.1f", proteinValue/5+7, fatValue/4+1.8, carbsValue/4+6.5];
-    dinner.text = [NSString stringWithFormat:@"protein %.1f fat %.1f carbs %.1f", proteinValue/5-10, weightValue/100, weightValue/100+5];
+    breakfast.text = [NSString stringWithFormat:@"protein %.f fat %.f carbs %.f", proteinValue/5+5.2, fatValue/4-1.7, carbsValue/4+6.3];
+    morningSnack.text = [NSString stringWithFormat:@"protein %.f fat %.f carbs %.f", proteinValue/5, fatValue/4+1.7, carbsValue/4-6.3];
+    lunch.text = [NSString stringWithFormat:@"protein %.f fat %.f carbs %.f", proteinValue/5-5.2, fatValue/4-1.8, carbsValue/4-6.5];
+    afternoonSnack.text = [NSString stringWithFormat:@"protein %.f fat %.f carbs %.f", proteinValue/5+7, fatValue/4+1.8, carbsValue/4+6.5];
+    dinner.text = [NSString stringWithFormat:@"protein %.f fat %.f carbs %.f", proteinValue/5-10, weightValue/100, weightValue/100+5];
     }
 }
 
@@ -70,6 +70,56 @@
 
 - (BOOL)prefersStatusBarHidden{
     return YES;
+}
+
+#pragma mark Share schedule
+- (IBAction)tellFriendPressed:(id)sender {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:@"Share your schedule with friends via ..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", @"Message", @"Mail", nil];
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            SLComposeViewController *facebook =[[SLComposeViewController alloc]init];
+            facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            [facebook setInitialText:[NSString stringWithFormat:@"My daily amount(grams) of protein - %.f, fat - %.f, carbs - %.f. Eat right with Meals Time app. Download it today https://itunes.apple.com/UA/app/id873941719?mt=8", proteinValue, fatValue, carbsValue]];
+            [self presentViewController:facebook animated:YES completion:nil];
+        }
+        NSLog(@"FACEBOOK SHARE");
+    }else if (buttonIndex == 1){
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            SLComposeViewController *twitter = [[SLComposeViewController alloc]init];
+            twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [twitter setInitialText:[NSString stringWithFormat:@"My daily amount(grams) of protein - %.f, fat - %.f, carbs - %.f. Eat right with @MealsTimeApp. Download it today https://itunes.apple.com/UA/app/id873941719?mt=8", proteinValue, fatValue, carbsValue]];
+            [self presentViewController:twitter animated:YES completion:nil];
+        }
+    }else if (buttonIndex == 2){
+        MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc]init];
+        [messageController setMessageComposeDelegate:self];
+        if ([MFMessageComposeViewController canSendText]) {
+            [messageController setRecipients:[NSArray arrayWithObjects:nil]];
+            [messageController setBody:[NSString stringWithFormat:@"My daily amount(grams) of protein - %.f, fat - %.f, carbs - %.f. And what yours? Go and check it! https://itunes.apple.com/UA/app/id873941719?mt=8", proteinValue, fatValue, carbsValue]];
+            [self presentViewController:messageController animated:YES completion:nil];
+        }
+    }else if (buttonIndex == 3){
+        
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc]init];
+        [mailController setMailComposeDelegate:self];
+        [mailController setSubject:@"Check out Meals Time app, it's awesome bro!"];
+        [mailController setMessageBody:[NSString stringWithFormat:@"My daily amount(grams) of protein - %.f, fat - %.f, carbs - %.f. And what yours? Go and check it! https://itunes.apple.com/UA/app/id873941719?mt=8", proteinValue, fatValue, carbsValue] isHTML:NO];
+        [self presentViewController:mailController animated:YES completion:nil];
+    }
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

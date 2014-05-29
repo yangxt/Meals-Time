@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+#import <MessageUI/MessageUI.h>
 
-
-@interface ScheduleViewController : UIViewController <UIAlertViewDelegate>
+@interface ScheduleViewController : UIViewController <UIAlertViewDelegate, UIActionSheetDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 {    
         int currentProgramNumber;
         float weightValue;
@@ -29,4 +30,5 @@
 @property (weak, nonatomic)  NSString *carb;
 @property (weak, nonatomic)  NSString *program;
 @property (weak, nonatomic)  NSString *weight;
+- (IBAction)tellFriendPressed:(id)sender;
 @end

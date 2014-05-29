@@ -10,7 +10,7 @@
 #import <Social/Social.h>
 #import <MessageUI/MessageUI.h>
 
-@interface MainViewController : UIViewController <UIAlertViewDelegate>
+@interface MainViewController : UIViewController <UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
 - (IBAction)ratePressed:(id)sender;
 - (IBAction)tweetPressed:(id)sender;
 - (IBAction)mailPressed:(id)sender;

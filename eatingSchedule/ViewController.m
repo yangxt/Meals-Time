@@ -19,6 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIFont *font = [UIFont boldSystemFontOfSize:16.0f];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
+                                                           forKey:UITextAttributeFont];
+    [programControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     //Load user data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -60,8 +64,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 
 #pragma mark button Actions
@@ -179,8 +181,8 @@
 }
 
 - (IBAction)acceptTime:(id)sender {
-    [minutesLabel setFont:[UIFont systemFontOfSize:25.0]];
-    [hoursLabel setFont:[UIFont systemFontOfSize:25.0]];
+    [minutesLabel setFont:[UIFont systemFontOfSize:34.0]];
+    [hoursLabel setFont:[UIFont systemFontOfSize:34.0]];
     programControl.enabled = YES;
     switchRest.enabled = YES;
     myScheduleButton.enabled = YES;
