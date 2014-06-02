@@ -15,7 +15,7 @@
     
     GADBannerView *bannerView_;
 }
-@property (weak, nonatomic) IBOutlet UIView *adMobView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageVi;
 - (IBAction)ratePressed:(id)sender;
 - (IBAction)tweetPressed:(id)sender;
 - (IBAction)mailPressed:(id)sender;

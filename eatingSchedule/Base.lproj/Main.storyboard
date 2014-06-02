@@ -300,30 +300,22 @@
                                     <action selector="ratePressed:" destination="QPQ-Fb-wJB" eventType="touchUpInside" id="jGC-UI-YF3"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkd-qe-8bc">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j52-9p-kfx" firstAttribute="leading" secondItem="yps-GB-hAB" secondAttribute="leading" constant="40" id="4LT-6K-Kjc"/>
                             <constraint firstAttribute="trailing" secondItem="aEE-v6-3Kh" secondAttribute="trailing" constant="40" id="FqS-Ls-pj6"/>
                             <constraint firstAttribute="centerY" secondItem="aEE-v6-3Kh" secondAttribute="centerY" id="Fyv-kF-XMI"/>
-                            <constraint firstItem="vkd-qe-8bc" firstAttribute="leading" secondItem="yps-GB-hAB" secondAttribute="leading" id="IZ2-kJ-km5"/>
                             <constraint firstItem="T2w-yq-FRj" firstAttribute="top" secondItem="QNf-aj-G4x" secondAttribute="bottom" constant="20" id="LWP-Js-1cQ"/>
                             <constraint firstAttribute="centerX" secondItem="QNf-aj-G4x" secondAttribute="centerX" id="Qfi-6E-Lu8"/>
                             <constraint firstItem="dPq-Ab-AIB" firstAttribute="top" secondItem="0Wa-b4-t8k" secondAttribute="bottom" constant="20" id="SjT-d4-Ucd"/>
-                            <constraint firstAttribute="trailing" secondItem="vkd-qe-8bc" secondAttribute="trailing" id="TEp-gK-v1E"/>
                             <constraint firstAttribute="centerX" secondItem="dPq-Ab-AIB" secondAttribute="centerX" id="XAk-9U-Bza"/>
-                            <constraint firstItem="T2w-yq-FRj" firstAttribute="top" secondItem="vkd-qe-8bc" secondAttribute="bottom" id="aw9-hk-RMD"/>
                             <constraint firstAttribute="centerY" secondItem="DXj-V8-fgA" secondAttribute="centerY" id="eD5-dm-OPQ"/>
                             <constraint firstAttribute="centerY" secondItem="j52-9p-kfx" secondAttribute="centerY" id="mfK-7Z-Qvb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adMobView" destination="vkd-qe-8bc" id="xte-8j-kf0"/>
+                        <outlet property="imageVi" destination="q4s-N8-RVt" id="0zs-u5-GFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCJ-zG-5qE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,7 +479,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9Ha-ag-Al4"/>
-        <segue reference="KYd-Vn-6ms"/>
+        <segue reference="FGm-dB-OB2"/>
+        <segue reference="VAC-aA-rzl"/>
     </inferredMetricsTieBreakers>
 </document>

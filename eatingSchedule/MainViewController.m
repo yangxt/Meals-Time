@@ -29,9 +29,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-     bannerView_ = [[GADBannerView alloc]initWithFrame:CGRectMake(self.adMobView.frame.origin.x, self.adMobView.frame.origin.y, self.adMobView.frame.size.width, self.adMobView.frame.size.height)];
+     bannerView_ = [[GADBannerView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
     bannerView_.adUnitID = MyAdUnitID;
     bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
     [bannerView_ loadRequest:[GADRequest request]];
     
     
