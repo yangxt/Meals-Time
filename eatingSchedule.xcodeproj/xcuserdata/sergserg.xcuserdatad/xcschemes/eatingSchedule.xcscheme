@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "88BAAA7318FD5051006D57FA"
-               BuildableName = "Meals Time TEST.app"
+               BuildableName = "Meals Time.app"
                BlueprintName = "eatingSchedule"
                ReferencedContainer = "container:eatingSchedule.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BAAA7318FD5051006D57FA"
-            BuildableName = "Meals Time TEST.app"
+            BuildableName = "Meals Time.app"
             BlueprintName = "eatingSchedule"
             ReferencedContainer = "container:eatingSchedule.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BAAA7318FD5051006D57FA"
-            BuildableName = "Meals Time TEST.app"
+            BuildableName = "Meals Time.app"
             BlueprintName = "eatingSchedule"
             ReferencedContainer = "container:eatingSchedule.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88BAAA7318FD5051006D57FA"
-            BuildableName = "Meals Time TEST.app"
+            BuildableName = "Meals Time.app"
             BlueprintName = "eatingSchedule"
             ReferencedContainer = "container:eatingSchedule.xcodeproj">
          </BuildableReference>

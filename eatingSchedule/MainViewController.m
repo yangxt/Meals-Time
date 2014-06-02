@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "source.h"
 
 @interface MainViewController ()
 
@@ -27,6 +28,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+     bannerView_ = [[GADBannerView alloc]initWithFrame:CGRectMake(self.adMobView.frame.origin.x, self.adMobView.frame.origin.y, self.adMobView.frame.size.width, self.adMobView.frame.size.height)];
+    bannerView_.adUnitID = MyAdUnitID;
+    bannerView_.rootViewController = self;
+    [bannerView_ loadRequest:[GADRequest request]];
+    
+    
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     NSInteger launchCount = [def integerForKey:@"launchCount"];
     launchCount++;
