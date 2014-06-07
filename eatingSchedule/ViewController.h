@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface ViewController : UIViewController <UITextFieldDelegate>
 {
     int minutes;
@@ -17,6 +16,7 @@
     float carbs;
     float fat;
     float protein;
+
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *myScheduleButton;

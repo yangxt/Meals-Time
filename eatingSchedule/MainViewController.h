@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import <MessageUI/MessageUI.h>
+#import "GADBannerView.h"
 
-@interface MainViewController : UIViewController <UIAlertViewDelegate, MFMailComposeViewControllerDelegate>
+@interface MainViewController : UIViewController <UIAlertViewDelegate, MFMailComposeViewControllerDelegate>{
+    
+    GADBannerView *bannerView_;
+}
+@property (weak, nonatomic) IBOutlet UIImageView *imageVi;
 - (IBAction)ratePressed:(id)sender;
 - (IBAction)tweetPressed:(id)sender;
 - (IBAction)mailPressed:(id)sender;
